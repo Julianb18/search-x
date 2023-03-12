@@ -43,22 +43,27 @@ function App() {
   }, [selectedItem]);
   console.log(searchResults);
   return (
-    <div className="h-screen bg-[#202124] p-7">
+    <div className="min-h-screen bg-[#202124] p-7">
       <h1 className="text-3xl font-bold text-pink-600">Hello world</h1>
-      <Searchbar
-        filteredData={filteredData}
-        inputValue={inputValue}
-        setInputValue={setInputValue}
-        searchHistory={searchHistory}
-        setSearchHistory={setSearchHistory}
-        setSelectedItem={setSelectedItem}
-      />
-      {searchResults.length > 0 &&
-        searchResults.slice(0, 10).map((item) => (
-          <div key={item.id}>
-            <ResultCard item={item} />
-          </div>
-        ))}
+      <div className="fixed">
+        <Searchbar
+          filteredData={filteredData}
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          searchHistory={searchHistory}
+          setSearchHistory={setSearchHistory}
+          setSelectedItem={setSelectedItem}
+        />
+      </div>
+      {searchResults.length > 0 && (
+        <div className="mt-14">
+          {searchResults.slice(0, 10).map((item) => (
+            <div className="" key={item.id}>
+              <ResultCard item={item} />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
