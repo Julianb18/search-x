@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Svg } from "./Svg";
 
 export const Searchbar = ({ data }) => {
   const [inputValue, setInputValue] = useState("");
@@ -40,10 +41,10 @@ export const Searchbar = ({ data }) => {
           <div className="h-3/5 w-[1px] self-center bg-[#9CA3AF]"></div>
 
           <button
-            className="flex justify-center items-center text-white rounded-r-3xl w-full"
+            className="flex justify-center items-center rounded-r-3xl w-full"
             onClick={() => onSearch(inputValue)}
           >
-            Search
+            <Svg icon="search" height="20" width="20" color="#4169BE" />
           </button>
         </div>
       </div>
