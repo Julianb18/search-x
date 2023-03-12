@@ -1,25 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Svg } from "./Svg";
 
-export const Searchbar = ({ data }) => {
-  const [inputValue, setInputValue] = useState("");
+export const Searchbar = ({
+  filteredData,
+  inputValue,
+  setInputValue,
+  searchHistory,
+  setSearchHistory,
+  setSelectedItem,
+}) => {
   const [isSuggestionDropdownOpen, setIsSuggestionDropdownOpen] =
     useState(true);
-  const [searchHistory, setSearchHistory] = useState([]);
 
   const searchRef = useRef(null);
   const inputRef = useRef(null);
-
-  const filteredData = data.filter((item) => {
-    const lowerCaseTitle = item.title.toLowerCase();
-    const lowerCaseInputValue = inputValue.toLowerCase();
-
-    return (
-      inputValue &&
-      lowerCaseTitle !== lowerCaseInputValue &&
-      item.title.toLowerCase().startsWith(inputValue.toLowerCase())
-    );
-  });
 
   const handleOnChange = (e) => {
     setInputValue(e.target.value);
@@ -27,6 +21,7 @@ export const Searchbar = ({ data }) => {
 
   const onSearch = (searchText) => {
     setInputValue(searchText);
+    setSelectedItem(searchText);
     setIsSuggestionDropdownOpen(false);
     // console.log(searchText);
     // console.log(isSuggestionDropdownOpen);
