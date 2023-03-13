@@ -8,7 +8,6 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [scrolled, setScrolled] = useState(false);
 
-  // console.log(selectedItem);
   useEffect(() => {
     let mockData = [...data.items];
 
@@ -44,8 +43,6 @@ function App() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  console.log(scrolled);
 
   return (
     <div className="min-h-screen bg-[#202124]">

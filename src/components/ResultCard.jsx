@@ -1,7 +1,6 @@
 import React from "react";
 
 export const ResultCard = ({ item }) => {
-  console.log(item);
   return (
     <div className="text-gray-200 my-4">
       <span className="text-xs">{item.url}</span>

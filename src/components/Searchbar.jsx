@@ -18,7 +18,7 @@ export const Searchbar = ({ data, setSelectedItem, scrolled }) => {
 
   const handleKeyDown = (e) => {
     // remove default behaviour of up and down arrow keys to jump to beginning and end of input
-    // if (e.which === 38 || e.which === 40) e.preventDefault();
+    if (e.which === 38 || e.which === 40) e.preventDefault();
 
     if (e.key === "ArrowUp" && focusedItem > 0) {
       setFocusedItem((prev) => prev - 1);
@@ -28,27 +28,23 @@ export const Searchbar = ({ data, setSelectedItem, scrolled }) => {
     ) {
       setFocusedItem((prev) => prev + 1);
     } else if (e.key === "Enter" && focusedItem > -1) {
-      //   console.log(filteredData[focusedItem].title.toLowerCase());
       onSearch(filteredData[focusedItem].title.toLowerCase());
       e.target.blur();
     } else if (e.key === "Enter" && focusedItem === -1) {
-      //   console.log(inputValue);
       onSearch(inputValue);
       e.target.blur();
     }
   };
-  //   console.log(isSuggestionDropdownOpen);
+
   const onSearch = (searchText) => {
     setInputValue(searchText);
     setSelectedItem(searchText);
     setIsSuggestionDropdownOpen(false);
-    // console.log(searchText);
-    // console.log(isSuggestionDropdownOpen);
+
     setSearchHistory([...searchHistory, searchText]);
   };
 
   const handleDelete = (item) => {
-    // console.log("clicked");
     setSearchHistory(searchHistory.filter((i) => i !== item));
   };
 
@@ -56,10 +52,7 @@ export const Searchbar = ({ data, setSelectedItem, scrolled }) => {
     const lowerCaseTitle = item.title.toLowerCase();
     const lowerCaseInputValue = inputValue.toLowerCase();
 
-    return (
-      // lowerCaseTitle !== lowerCaseInputValue &&
-      inputValue && lowerCaseTitle.startsWith(lowerCaseInputValue)
-    );
+    return inputValue && lowerCaseTitle.startsWith(lowerCaseInputValue);
   });
 
   useEffect(() => {
@@ -83,13 +76,10 @@ export const Searchbar = ({ data, setSelectedItem, scrolled }) => {
     };
   }, [isSuggestionDropdownOpen]);
 
-  // search history useEffect
   useEffect(() => {
     inputRef.current.focus();
   }, []);
-  //   console.log(filteredData);
-  //   console.log(searchHistory);
-  //   console.log(isSuggestionDropdownOpen);
+
   return (
     <div ref={searchRef} className="w-full">
       <div className="relative w-full">
