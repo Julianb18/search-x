@@ -1,230 +1,238 @@
-[
-  {
-    "title": "React js",
-    "url": "https://reactjs.org/",
-    "description": "A JavaScript library for building user interfaces",
-    "id": 1
-  },
-  {
-    "title": "React Native",
-    "url": "https://facebook.github.io/react-native/",
-    "description": "A framework for building native apps with React",
-    "id": 2
-  },
-  {
-    "title": "React Router",
-    "url": "https://reacttraining.com/react-router/",
-    "description": "Declarative routing for React",
-    "id": 3
-  },
-  {
-    "title": "Redux",
-    "url": "https://redux.js.org/",
-    "description": "A predictable state container for JavaScript apps",
-    "id": 4
-  },
-  {
-    "title": "React Redux",
-    "url": "https://react-redux.js.org/",
-    "description": "Official React bindings for Redux",
-    "id": 5
-  },
-  {
-    "title": "Redux DevTools",
-    "url": "https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en",
-    "description": "Chrome DevTools extension for Redux",
-    "id": 6
-  },
-  {
-    "title": "Vue js",
-    "url": "https://vuejs.org/",
-    "description": "The Progressive JavaScript Framework",
-    "id": 7
-  },
-  {
-    "title": "Vue Router",
-    "url": "https://router.vuejs.org/",
-    "description": "The official router for Vue.js",
-    "id": 8
-  },
-  {
-    "title": "Vuex",
-    "url": "https://vuex.vuejs.org/",
-    "description": "Centralized State Management for Vue.js",
-    "id": 9
-  },
-  {
-    "title": "Angular",
-    "url": "https://angular.io/",
-    "description": "One framework. Mobile & desktop.",
-    "id": 10
-  },
-  {
-    "title": "Angular Router",
-    "url": "https://angular.io/guide/router",
-    "description": "The Angular Router enables navigation from one view to the next as users perform application tasks.",
-    "id": 11
-  },
-  {
-    "title": "Angular Material",
-    "url": "https://material.angular.io/",
-    "description": "Material Design components for Angular",
-    "id": 12
-  },
-  {
-    "title": "React Hooks",
-    "url": "https://reactjs.org/docs/hooks-intro.html",
-    "description": "React Hooks is a new addition in React 16.8. It lets you use state and other React features without writing a class.",
-    "id": 13
-  },
-  {
-    "title": "React Context",
-    "url": "https://reactjs.org/docs/context.html",
-    "description": "Context provides a way to pass data through the component tree without having to pass props down manually at every level.",
-    "id": 14
-  },
-  {
-    "title": "React Suspense",
-    "url": "https://reactjs.org/docs/concurrent-mode-suspense.html",
-    "description": "Suspense is a new React feature that allows you to manage the loading state of your components in a declarative way.",
-    "id": 15
-  },
-  {
-    "title": "React Portals",
-    "url": "https://reactjs.org/docs/portals.html",
-    "description": "Portals provide a first-class way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.",
-    "id": 16
-  },
-  {
-    "title": "React Fragments",
-    "url": "https://reactjs.org/docs/fragments.html",
-    "description": "A common pattern in React is for a component to return multiple elements. Fragments let you group a list of children without adding extra nodes to the DOM.",
-    "id": 17
-  },
-  {
-    "title": "React Error Boundaries",
-    "url": "https://reactjs.org/docs/error-boundaries.html",
-    "description": "Error boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of the component tree that crashed.",
-    "id": 18
-  },
-  {
-    "title": "React Strict Mode",
-    "url": "https://reactjs.org/docs/strict-mode.html",
-    "description": "Strict mode is a tool for highlighting potential problems in an application.",
-    "id": 19
-  },
-  {
-    "title": "React Profiler",
-    "url": "https://reactjs.org/docs/profiler.html",
-    "description": "The React Profiler measures how often your application renders and what the “cost” of rendering is.",
-    "id": 20
-  },
-  {
-    "title": "React Refs",
-    "url": "https://reactjs.org/docs/refs-and-the-dom.html",
-    "description": "Refs provide a way to access DOM nodes or React elements created in the render method.",
-    "id": 21
-  },
-  {
-    "title": "Vue Props",
-    "url": "https://vuejs.org/v2/guide/components-props.html",
-    "description": "Props are custom attributes you can register on a component. When a value is passed to a prop attribute, it becomes a property on that component instance.",
-    "id": 22
-  },
-  {
-    "title": "Vue Events",
-    "url": "https://vuejs.org/v2/guide/components-custom-events.html",
-    "description": "Vue.js provides an elegant mechanism for passing messages between parent and child components: custom events.",
-    "id": 23
-  },
-  {
-    "title": "Vue Slots",
-    "url": "https://vuejs.org/v2/guide/components-slots.html",
-    "description": "In many cases, it’s useful to have a single component that represents a generic box. A common pattern is to have some content slot into it.",
-    "id": 24
-  },
-  {
-    "title": "Vue Refs",
-    "url": "https://vuejs.org/v2/guide/components-edge-cases.html#Accessing-Child-Component-Instances-amp-Child-Elements",
-    "description": "When you need to directly access a child component, you can assign a ref attribute to the child component.",
-    "id": 25
-  },
-  {
-    "title": "Vue Mixins",
-    "url": "https://vuejs.org/v2/guide/mixins.html",
-    "description": "Mixins are a flexible way to distribute reusable functionalities for Vue components. A mixin object can contain any component options.",
-    "id": 26
-  },
-  {
-    "title": "Vue Filters",
-    "url": "https://vuejs.org/v2/guide/filters.html",
-    "description": "Filters are usable in two places: mustache interpolations and v-bind expressions (the latter supported in 2.1.0+). Filters should be appended to the end of the JavaScript expression, denoted by the “pipe” symbol:",
-    "id": 27
-  },
-  {
-    "title": "Vue Directives",
-    "url": "https://vuejs.org/v2/guide/custom-directive.html",
-    "description": "In templates, custom directives are prefixed with v- to indicate that they are special attributes provided by Vue, and as you may have guessed, they apply special reactive behavior to the rendered DOM.",
-    "id": 28
-  },
-  {
-    "title": "Vue Plugins",
-    "url": "https://vuejs.org/v2/guide/plugins.html",
-    "description": "Plugins usually add global-level functionality to Vue. There is no strictly defined scope for a plugin - there are typically several types of plugins you can write:",
-    "id": 29
-  },
-  {
-    "title": "Angular Component",
-    "url": "https://angular.io/guide/component-overview",
-    "description": "Angular components are the main building blocks of Angular applications. Each component consists of an HTML template, a TypeScript class to handle data and functionality, and a CSS selector that defines how the component is used in a template.",
-    "id": 30
-  },
-  {
-    "title": "Angular Directive",
-    "url": "https://angular.io/guide/attribute-directives",
-    "description": "Directives attach behavior to elements in the DOM. Directives with an asterisk (*) are structural directives that shape or reshape the DOM’s structure, typically by adding, removing, and manipulating elements.",
-    "id": 31
-  },
-  {
-    "title": "Angular Pipe",
-    "url": "https://angular.io/guide/pipes",
-    "description": "Pipes are a way to write display-value transformations that you can declare in your HTML.",
-    "id": 32
-  },
-  {
-    "title": "Angular Service",
-    "url": "https://angular.io/guide/architecture-services",
-    "description": "Angular services are a broad category encompassing any value, function, or feature that your application needs.",
-    "id": 33
-  },
-  {
-    "title": "Angular Module",
-    "url": "https://angular.io/guide/architecture-modules",
-    "description": "Angular modules are containers for a cohesive block of code dedicated to an application domain, a workflow, or a closely related set of capabilities.",
-    "id": 34
-  },
-  {
-    "title": "Angular Dependency Injection",
-    "url": "https://angular.io/guide/dependency-injection",
-    "description": "Dependency injection is a design pattern and mechanism for creating and delivering parts of an application to other parts of an application that request them.",
-    "id": 35
-  },
-  {
-    "title": "Angular Routing",
-    "url": "https://angular.io/guide/router",
-    "description": "The Angular Router enables navigation from one view to the next as users perform application tasks.",
-    "id": 36
-  },
-  {
-    "title": "Angular Material",
-    "url": "https://material.angular.io/",
-    "description": "Material Design components for Angular",
-    "id": 37
-  },
-  {
-    "title": "React Component",
-    "url": "https://reactjs.org/docs/components-and-props.html",
-    "description": "Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.",
-    "id": 38
+{
+  "items": [
+    {
+      "title": "React js",
+      "url": "https://reactjs.org/",
+      "description": "A JavaScript library for building user interfaces",
+      "id": 1
+    },
+    {
+      "title": "React Native",
+      "url": "https://facebook.github.io/react-native/",
+      "description": "A framework for building native apps with React",
+      "id": 2
+    },
+    {
+      "title": "React Router",
+      "url": "https://reacttraining.com/react-router/",
+      "description": "Declarative routing for React",
+      "id": 3
+    },
+    {
+      "title": "Redux",
+      "url": "https://redux.js.org/",
+      "description": "A predictable state container for JavaScript apps",
+      "id": 4
+    },
+    {
+      "title": "React Redux",
+      "url": "https://react-redux.js.org/",
+      "description": "Official React bindings for Redux",
+      "id": 5
+    },
+    {
+      "title": "Redux DevTools",
+      "url": "https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en",
+      "description": "Chrome DevTools extension for Redux",
+      "id": 6
+    },
+    {
+      "title": "Vue js",
+      "url": "https://vuejs.org/",
+      "description": "The Progressive JavaScript Framework",
+      "id": 7
+    },
+    {
+      "title": "Vue Router",
+      "url": "https://router.vuejs.org/",
+      "description": "The official router for Vue.js",
+      "id": 8
+    },
+    {
+      "title": "Vuex",
+      "url": "https://vuex.vuejs.org/",
+      "description": "Centralized State Management for Vue.js",
+      "id": 9
+    },
+    {
+      "title": "Angular",
+      "url": "https://angular.io/",
+      "description": "One framework. Mobile & desktop.",
+      "id": 10
+    },
+    {
+      "title": "Angular Router",
+      "url": "https://angular.io/guide/router",
+      "description": "The Angular Router enables navigation from one view to the next as users perform application tasks.",
+      "id": 11
+    },
+    {
+      "title": "Angular Material",
+      "url": "https://material.angular.io/",
+      "description": "Material Design components for Angular",
+      "id": 12
+    },
+    {
+      "title": "React Hooks",
+      "url": "https://reactjs.org/docs/hooks-intro.html",
+      "description": "React Hooks is a new addition in React 16.8. It lets you use state and other React features without writing a class.",
+      "id": 13
+    },
+    {
+      "title": "React Context",
+      "url": "https://reactjs.org/docs/context.html",
+      "description": "Context provides a way to pass data through the component tree without having to pass props down manually at every level.",
+      "id": 14
+    },
+    {
+      "title": "React Suspense",
+      "url": "https://reactjs.org/docs/concurrent-mode-suspense.html",
+      "description": "Suspense is a new React feature that allows you to manage the loading state of your components in a declarative way.",
+      "id": 15
+    },
+    {
+      "title": "React Portals",
+      "url": "https://reactjs.org/docs/portals.html",
+      "description": "Portals provide a first-class way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.",
+      "id": 16
+    },
+    {
+      "title": "React Fragments",
+      "url": "https://reactjs.org/docs/fragments.html",
+      "description": "A common pattern in React is for a component to return multiple elements. Fragments let you group a list of children without adding extra nodes to the DOM.",
+      "id": 17
+    },
+    {
+      "title": "React Error Boundaries",
+      "url": "https://reactjs.org/docs/error-boundaries.html",
+      "description": "Error boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of the component tree that crashed.",
+      "id": 18
+    },
+    {
+      "title": "React Strict Mode",
+      "url": "https://reactjs.org/docs/strict-mode.html",
+      "description": "Strict mode is a tool for highlighting potential problems in an application.",
+      "id": 19
+    },
+    {
+      "title": "React Profiler",
+      "url": "https://reactjs.org/docs/profiler.html",
+      "description": "The React Profiler measures how often your application renders and what the “cost” of rendering is.",
+      "id": 20
+    },
+    {
+      "title": "React Refs",
+      "url": "https://reactjs.org/docs/refs-and-the-dom.html",
+      "description": "Refs provide a way to access DOM nodes or React elements created in the render method.",
+      "id": 21
+    },
+    {
+      "title": "Vue Props",
+      "url": "https://vuejs.org/v2/guide/components-props.html",
+      "description": "Props are custom attributes you can register on a component. When a value is passed to a prop attribute, it becomes a property on that component instance.",
+      "id": 22
+    },
+    {
+      "title": "Vue Events",
+      "url": "https://vuejs.org/v2/guide/components-custom-events.html",
+      "description": "Vue.js provides an elegant mechanism for passing messages between parent and child components: custom events.",
+      "id": 23
+    },
+    {
+      "title": "Vue Slots",
+      "url": "https://vuejs.org/v2/guide/components-slots.html",
+      "description": "In many cases, it’s useful to have a single component that represents a generic box. A common pattern is to have some content slot into it.",
+      "id": 24
+    },
+    {
+      "title": "Vue Refs",
+      "url": "https://vuejs.org/v2/guide/components-edge-cases.html#Accessing-Child-Component-Instances-amp-Child-Elements",
+      "description": "When you need to directly access a child component, you can assign a ref attribute to the child component.",
+      "id": 25
+    },
+    {
+      "title": "Vue Mixins",
+      "url": "https://vuejs.org/v2/guide/mixins.html",
+      "description": "Mixins are a flexible way to distribute reusable functionalities for Vue components. A mixin object can contain any component options.",
+      "id": 26
+    },
+    {
+      "title": "Vue Filters",
+      "url": "https://vuejs.org/v2/guide/filters.html",
+      "description": "Filters are usable in two places: mustache interpolations and v-bind expressions (the latter supported in 2.1.0+). Filters should be appended to the end of the JavaScript expression, denoted by the “pipe” symbol:",
+      "id": 27
+    },
+    {
+      "title": "Vue Directives",
+      "url": "https://vuejs.org/v2/guide/custom-directive.html",
+      "description": "In templates, custom directives are prefixed with v- to indicate that they are special attributes provided by Vue, and as you may have guessed, they apply special reactive behavior to the rendered DOM.",
+      "id": 28
+    },
+    {
+      "title": "Vue Plugins",
+      "url": "https://vuejs.org/v2/guide/plugins.html",
+      "description": "Plugins usually add global-level functionality to Vue. There is no strictly defined scope for a plugin - there are typically several types of plugins you can write:",
+      "id": 29
+    },
+    {
+      "title": "Angular Component",
+      "url": "https://angular.io/guide/component-overview",
+      "description": "Angular components are the main building blocks of Angular applications. Each component consists of an HTML template, a TypeScript class to handle data and functionality, and a CSS selector that defines how the component is used in a template.",
+      "id": 30
+    },
+    {
+      "title": "Angular Directive",
+      "url": "https://angular.io/guide/attribute-directives",
+      "description": "Directives attach behavior to elements in the DOM. Directives with an asterisk (*) are structural directives that shape or reshape the DOM’s structure, typically by adding, removing, and manipulating elements.",
+      "id": 31
+    },
+    {
+      "title": "Angular Pipe",
+      "url": "https://angular.io/guide/pipes",
+      "description": "Pipes are a way to write display-value transformations that you can declare in your HTML.",
+      "id": 32
+    },
+    {
+      "title": "Angular Service",
+      "url": "https://angular.io/guide/architecture-services",
+      "description": "Angular services are a broad category encompassing any value, function, or feature that your application needs.",
+      "id": 33
+    },
+    {
+      "title": "Angular Module",
+      "url": "https://angular.io/guide/architecture-modules",
+      "description": "Angular modules are containers for a cohesive block of code dedicated to an application domain, a workflow, or a closely related set of capabilities.",
+      "id": 34
+    },
+    {
+      "title": "Angular Dependency Injection",
+      "url": "https://angular.io/guide/dependency-injection",
+      "description": "Dependency injection is a design pattern and mechanism for creating and delivering parts of an application to other parts of an application that request them.",
+      "id": 35
+    },
+    {
+      "title": "Angular Routing",
+      "url": "https://angular.io/guide/router",
+      "description": "The Angular Router enables navigation from one view to the next as users perform application tasks.",
+      "id": 36
+    },
+    {
+      "title": "Angular Material",
+      "url": "https://material.angular.io/",
+      "description": "Material Design components for Angular",
+      "id": 37
+    },
+    {
+      "title": "React Component",
+      "url": "https://reactjs.org/docs/components-and-props.html",
+      "description": "Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.",
+      "id": 38
+    }
+  ],
+  "searchInformation": {
+    "searchTime": 0.774,
+    "formattedSearchTime": "0.76",
+    "totalResults": "39",
+    "formattedTotalResults": "39"
   }
-]
+}

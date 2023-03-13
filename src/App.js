@@ -7,12 +7,12 @@ function App() {
   const [selectedItem, setSelectedItem] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
-  console.log(selectedItem);
+  // console.log(selectedItem);
   useEffect(() => {
-    let mockData = [...data];
+    let mockData = [...data.items];
 
     // we want to have the searched for item show on top of our results
-    const selectedIndex = data.findIndex(
+    const selectedIndex = data.items.findIndex(
       (item) => item.title.toLowerCase() === selectedItem.toLowerCase()
     );
 
@@ -29,15 +29,25 @@ function App() {
     });
     setSearchResults(results);
   }, [selectedItem]);
-  console.log(searchResults);
+  // console.log(data.items);
   return (
     <div className="min-h-screen bg-[#202124] p-7">
-      <h1 className="text-3xl font-bold text-pink-600">Hello world</h1>
+      <h1 className="text-3xl font-bold text-white mb-3">Search X</h1>
       <div className="fixed max-w-xl w-full">
-        <Searchbar data={data} setSelectedItem={setSelectedItem} />
+        <Searchbar data={data.items} setSelectedItem={setSelectedItem} />
       </div>
       {searchResults.length > 0 && (
-        <div className="mt-14">
+        <div className="text-[#9CA3AF] mt-24 pt-2 border-t-[1px] border-[#9CA3AF]">
+          <span>
+            About {data.searchInformation.formattedTotalResults} results{" "}
+          </span>
+          <span>
+            &#40;{data.searchInformation.formattedSearchTime} seconds&#41;
+          </span>
+        </div>
+      )}
+      {searchResults.length > 0 && (
+        <div className="mt-2">
           {searchResults.slice(0, 10).map((item) => (
             <div className="" key={item.id}>
               <ResultCard item={item} />

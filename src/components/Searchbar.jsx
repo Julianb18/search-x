@@ -18,7 +18,7 @@ export const Searchbar = ({ data, setSelectedItem }) => {
 
   const handleKeyDown = (e) => {
     // remove default behaviour of up and down arrow keys to jump to beginning and end of input
-    if (e.which === 38 || e.which === 40) e.preventDefault();
+    // if (e.which === 38 || e.which === 40) e.preventDefault();
 
     if (e.key === "ArrowUp" && focusedItem > 0) {
       setFocusedItem((prev) => prev - 1);
@@ -27,12 +27,17 @@ export const Searchbar = ({ data, setSelectedItem }) => {
       focusedItem < filteredData.slice(0, 10).length - 1
     ) {
       setFocusedItem((prev) => prev + 1);
-    } else if (e.key === "Enter") {
+    } else if (e.key === "Enter" && focusedItem > -1) {
+      //   console.log(filteredData[focusedItem].title.toLowerCase());
       onSearch(filteredData[focusedItem].title.toLowerCase());
+      e.target.blur();
+    } else if (e.key === "Enter" && focusedItem === -1) {
+      //   console.log(inputValue);
+      onSearch(inputValue);
       e.target.blur();
     }
   };
-  console.log(isSuggestionDropdownOpen);
+  //   console.log(isSuggestionDropdownOpen);
   const onSearch = (searchText) => {
     setInputValue(searchText);
     setSelectedItem(searchText);
@@ -43,7 +48,7 @@ export const Searchbar = ({ data, setSelectedItem }) => {
   };
 
   const handleDelete = (item) => {
-    console.log("clicked");
+    // console.log("clicked");
     setSearchHistory(searchHistory.filter((i) => i !== item));
   };
 
@@ -82,7 +87,7 @@ export const Searchbar = ({ data, setSelectedItem }) => {
   useEffect(() => {
     inputRef.current.focus();
   }, []);
-
+  //   console.log(filteredData);
   //   console.log(searchHistory);
   //   console.log(isSuggestionDropdownOpen);
   return (
