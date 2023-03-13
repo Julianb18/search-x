@@ -105,12 +105,13 @@ export const Searchbar = ({ data, setSelectedItem, scrolled }) => {
               ? "rounded-b-none"
               : "rounded-b-3xl"
           }
-          ${
-            isSuggestionDropdownOpen
-              ? "border-transparent pl-12"
-              : "pl-4 hover:shadow-lg"
-          }
+          ${isSuggestionDropdownOpen ? "pl-12" : "pl-4 hover:shadow-lg"}
           ${scrolled ? "border border-[#9CA3AF]" : "border border-transparent"}
+          ${
+            inputValue && isSuggestionDropdownOpen
+              ? "border border-transparent"
+              : "border border-[#9CA3AF]"
+          }
           `}
           type="text"
           value={inputValue}
