@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Svg } from "./Svg";
 
-export const Searchbar = ({ data, setSelectedItem }) => {
+export const Searchbar = ({ data, setSelectedItem, scrolled }) => {
   const [inputValue, setInputValue] = useState("");
   const [searchHistory, setSearchHistory] = useState([]);
   const [isSuggestionDropdownOpen, setIsSuggestionDropdownOpen] =
@@ -99,7 +99,7 @@ export const Searchbar = ({ data, setSelectedItem }) => {
           </div>
         )}
         <input
-          className={`w-full text-white border border-[#9CA3AF] caret-white outline-none rounded-t-3xl py-2 pr-24 hover:bg-[#303134] hover:border-none
+          className={`w-full text-white caret-white outline-none rounded-t-3xl py-2 pr-24 bg-[#303134] 
           ${
             isSuggestionDropdownOpen && inputValue && filteredData.length > 0
               ? "rounded-b-none"
@@ -107,9 +107,10 @@ export const Searchbar = ({ data, setSelectedItem }) => {
           }
           ${
             isSuggestionDropdownOpen
-              ? "bg-[#303134] border-none pl-12"
-              : "bg-transparent pl-4"
+              ? "border-transparent pl-12"
+              : "pl-4 hover:shadow-lg"
           }
+          ${scrolled ? "border border-[#9CA3AF]" : "border border-transparent"}
           `}
           type="text"
           value={inputValue}
@@ -141,8 +142,9 @@ export const Searchbar = ({ data, setSelectedItem }) => {
         </div>
       </div>
       <div
-        className={`bg-[#303134] rounded-b-3xl text-white 
+        className={`bg-[#303134] rounded-b-3xl text-white
       ${isSuggestionDropdownOpen && inputValue ? "block" : "hidden"}
+      ${isSuggestionDropdownOpen ? "shadow-lg" : ""}
       `}
       >
         {filteredData.slice(0, 10).map((item, index) => (
