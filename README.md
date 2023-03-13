@@ -2,10 +2,10 @@
 
 ## Requirements
 
-- [ ] Input field
+- [x] Input field
   - [x] focus input on screen load
   - [x] show and hide autocomplete items on input focus and un-focus
-  - [ ] search input on enter key press
+  - [x] search input on enter key press
 - [x] Autocomplete
   - [x] show entries that start with the input value
   - [x] indicate which items have been clicked (search history)

@@ -19,6 +19,12 @@ export const Searchbar = ({
     setInputValue(e.target.value);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      onSearch(inputValue.toLowerCase());
+    }
+  };
+
   const onSearch = (searchText) => {
     setInputValue(searchText);
     setSelectedItem(searchText);
@@ -81,6 +87,7 @@ export const Searchbar = ({
           type="text"
           value={inputValue}
           onChange={handleOnChange}
+          onKeyDown={handleKeyDown}
           ref={inputRef}
           onFocus={() => setIsSuggestionDropdownOpen(true)}
           //   onBlur={() => setInputFocused(false)}
