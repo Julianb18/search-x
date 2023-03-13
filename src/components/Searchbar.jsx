@@ -93,9 +93,13 @@ export const Searchbar = ({ data, setSelectedItem }) => {
   return (
     <div ref={searchRef} className="w-full">
       <div className="relative w-full">
-        {/* round border only if items in memory */}
+        {isSuggestionDropdownOpen && (
+          <div className="flex items-center absolute h-full px-4 top-0 left-0 ">
+            <Svg icon="search" height="17" width="17" color="#9CA3AF" />
+          </div>
+        )}
         <input
-          className={`w-full text-white border border-[#9CA3AF] caret-white outline-none rounded-t-3xl pl-4 py-2 pr-[71px] hover:bg-[#303134] hover:border-none
+          className={`w-full text-white border border-[#9CA3AF] caret-white outline-none rounded-t-3xl py-2 pr-24 hover:bg-[#303134] hover:border-none
           ${
             isSuggestionDropdownOpen && inputValue && filteredData.length > 0
               ? "rounded-b-none"
@@ -103,8 +107,8 @@ export const Searchbar = ({ data, setSelectedItem }) => {
           }
           ${
             isSuggestionDropdownOpen
-              ? "bg-[#303134] border-none"
-              : "bg-transparent"
+              ? "bg-[#303134] border-none pl-12"
+              : "bg-transparent pl-4"
           }
           `}
           type="text"
@@ -114,11 +118,22 @@ export const Searchbar = ({ data, setSelectedItem }) => {
           ref={inputRef}
           onFocus={() => setIsSuggestionDropdownOpen(true)}
         />
-        <div className="flex absolute h-full rounded-r-3xl min-w-[55px] top-0 right-0">
-          <div className="h-3/5 w-[1px] self-center bg-[#9CA3AF]"></div>
 
+        <div className="flex absolute space-x-4 pr-4 h-full rounded-r-3xl min-w-[55px] top-0 right-0">
+          <div
+            className={`flex items-center cursor-pointer ${
+              inputValue ? "block" : "hidden"
+            }`}
+            onClick={() => {
+              setInputValue("");
+              inputRef.current.focus();
+            }}
+          >
+            <Svg icon="close" height="20" width="20" color="#9CA3AF" />
+          </div>
+          <div className="h-3/5 w-[1px] self-center bg-[#9CA3AF]"></div>
           <button
-            className="flex justify-center items-center rounded-r-3xl w-full"
+            className="flex items-center rounded-r-3xl w-full"
             onClick={() => onSearch(inputValue.toLowerCase())}
           >
             <Svg icon="search" height="20" width="20" color="#8ab4f8" />
