@@ -4,20 +4,9 @@ import { Searchbar } from "./components/Searchbar";
 import data from "./Data.json";
 
 function App() {
-  const [inputValue, setInputValue] = useState("");
   const [selectedItem, setSelectedItem] = useState("");
-  const [searchHistory, setSearchHistory] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
 
-  const filteredData = data.filter((item) => {
-    const lowerCaseTitle = item.title.toLowerCase();
-    const lowerCaseInputValue = inputValue.toLowerCase();
-
-    return (
-      // lowerCaseTitle !== lowerCaseInputValue &&
-      inputValue && lowerCaseTitle.startsWith(lowerCaseInputValue)
-    );
-  });
   console.log(selectedItem);
   useEffect(() => {
     let mockData = [...data];
@@ -45,14 +34,7 @@ function App() {
     <div className="min-h-screen bg-[#202124] p-7">
       <h1 className="text-3xl font-bold text-pink-600">Hello world</h1>
       <div className="fixed max-w-xl w-full">
-        <Searchbar
-          filteredData={filteredData}
-          inputValue={inputValue}
-          setInputValue={setInputValue}
-          searchHistory={searchHistory}
-          setSearchHistory={setSearchHistory}
-          setSelectedItem={setSelectedItem}
-        />
+        <Searchbar data={data} setSelectedItem={setSelectedItem} />
       </div>
       {searchResults.length > 0 && (
         <div className="mt-14">

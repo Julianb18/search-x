@@ -1,16 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Svg } from "./Svg";
 
-export const Searchbar = ({
-  filteredData,
-  inputValue,
-  setInputValue,
-  searchHistory,
-  setSearchHistory,
-  setSelectedItem,
-}) => {
+export const Searchbar = ({ data, setSelectedItem }) => {
+  const [inputValue, setInputValue] = useState("");
+  const [searchHistory, setSearchHistory] = useState([]);
   const [isSuggestionDropdownOpen, setIsSuggestionDropdownOpen] =
     useState(true);
+
   const [focusedItem, setFocusedItem] = useState(-1);
 
   const searchRef = useRef(null);
@@ -50,6 +46,16 @@ export const Searchbar = ({
     console.log("clicked");
     setSearchHistory(searchHistory.filter((i) => i !== item));
   };
+
+  const filteredData = data.filter((item) => {
+    const lowerCaseTitle = item.title.toLowerCase();
+    const lowerCaseInputValue = inputValue.toLowerCase();
+
+    return (
+      // lowerCaseTitle !== lowerCaseInputValue &&
+      inputValue && lowerCaseTitle.startsWith(lowerCaseInputValue)
+    );
+  });
 
   useEffect(() => {
     const checkIfClickedOutside = (e) => {
