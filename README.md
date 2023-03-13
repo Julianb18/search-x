@@ -29,4 +29,4 @@
 
 ### Fix
 
-- [ ] searchbar styles
+- [x] searchbar styles
