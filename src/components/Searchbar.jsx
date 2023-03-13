@@ -28,6 +28,11 @@ export const Searchbar = ({
     setSearchHistory([...searchHistory, searchText]);
   };
 
+  const handleDelete = (item) => {
+    console.log("clicked");
+    setSearchHistory(searchHistory.filter((i) => i !== item));
+  };
+
   useEffect(() => {
     const checkIfClickedOutside = (e) => {
       // If the dropdown is open and the clicked target is not within the dropdown,
@@ -57,7 +62,7 @@ export const Searchbar = ({
   //   console.log(searchHistory);
   //   console.log(isSuggestionDropdownOpen);
   return (
-    <div ref={searchRef} className="max-w-xl">
+    <div ref={searchRef} className="w-full">
       <div className="relative w-full">
         {/* round border only if items in memory */}
         <input
@@ -87,7 +92,7 @@ export const Searchbar = ({
             className="flex justify-center items-center rounded-r-3xl w-full"
             onClick={() => onSearch(inputValue.toLowerCase())}
           >
-            <Svg icon="search" height="20" width="20" color="#4169BE" />
+            <Svg icon="search" height="20" width="20" color="#8ab4f8" />
           </button>
         </div>
       </div>
@@ -98,16 +103,33 @@ export const Searchbar = ({
       >
         {filteredData.slice(0, 10).map((item) => (
           <div
-            className={`cursor-pointer hover:bg-gray-600 last-of-type:rounded-b-3xl py-2 px-4 
+            className={`flex group cursor-pointer hover:bg-gray-500 hover:bg-opacity-20 text-sm last-of-type:rounded-b-3xl 
             ${
               searchHistory.includes(item.title.toLowerCase())
                 ? "text-purple-400"
                 : ""
             }`}
             key={item.id}
-            onClick={() => onSearch(item.title.toLowerCase())}
           >
-            {item.title.toLowerCase()}
+            <div
+              className="flex w-full h-full py-2 px-4"
+              onClick={() => onSearch(item.title.toLowerCase())}
+            >
+              <div className="flex justify-center items-center pr-4">
+                {searchHistory.includes(item.title.toLowerCase()) ? (
+                  <Svg icon="history" height="16" width="16" color="#9CA3AF" />
+                ) : (
+                  <Svg icon="search" height="16" width="16" color="#9CA3AF" />
+                )}
+              </div>
+              <span>{item.title.toLowerCase()}</span>
+            </div>
+            <button
+              className="hidden group-hover:block text-[#9CA3AF] hover:text-[#8ab4f8] hover:underline ml-auto px-4"
+              onClick={() => handleDelete(item.title.toLowerCase())}
+            >
+              delete
+            </button>
           </div>
         ))}
       </div>

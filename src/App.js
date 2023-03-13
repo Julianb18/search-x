@@ -45,7 +45,7 @@ function App() {
   return (
     <div className="min-h-screen bg-[#202124] p-7">
       <h1 className="text-3xl font-bold text-pink-600">Hello world</h1>
-      <div className="fixed">
+      <div className="fixed max-w-xl w-full">
         <Searchbar
           filteredData={filteredData}
           inputValue={inputValue}
