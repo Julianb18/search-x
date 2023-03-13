@@ -68,7 +68,7 @@ export const Searchbar = ({
         <input
           className={`w-full text-white border border-[#9CA3AF] caret-white outline-none rounded-t-3xl pl-4 py-2 pr-[71px] hover:bg-[#303134] hover:border-none
           ${
-            isSuggestionDropdownOpen && inputValue
+            isSuggestionDropdownOpen && inputValue && filteredData.length > 0
               ? "rounded-b-none"
               : "rounded-b-3xl"
           }

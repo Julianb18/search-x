@@ -6,11 +6,11 @@
   - [x] focus input on screen load
   - [x] show and hide autocomplete items on input focus and un-focus
   - [ ] search input on enter key press
-- [ ] Autocomplete
+- [x] Autocomplete
   - [x] show entries that start with the input value
   - [x] indicate which items have been clicked (search history)
   - [x] limit items to 10 rows
-  - [ ] remove button for items in history
+  - [x] remove button for items in history
 - [ ] Show list of results on selection
   - [x] search input persists on item select
   - [ ] result meta data (how many results and how long it took)

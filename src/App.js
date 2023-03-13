@@ -14,9 +14,8 @@ function App() {
     const lowerCaseInputValue = inputValue.toLowerCase();
 
     return (
-      inputValue &&
-      lowerCaseTitle !== lowerCaseInputValue &&
-      lowerCaseTitle.startsWith(lowerCaseInputValue)
+      // lowerCaseTitle !== lowerCaseInputValue &&
+      inputValue && lowerCaseTitle.startsWith(lowerCaseInputValue)
     );
   });
   console.log(selectedItem);
