@@ -11,6 +11,7 @@ export const Searchbar = ({
 }) => {
   const [isSuggestionDropdownOpen, setIsSuggestionDropdownOpen] =
     useState(true);
+  const [focusedItem, setFocusedItem] = useState(-1);
 
   const searchRef = useRef(null);
   const inputRef = useRef(null);
@@ -20,11 +21,19 @@ export const Searchbar = ({
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      onSearch(inputValue.toLowerCase());
+    if (e.key === "ArrowUp" && focusedItem > 0) {
+      setFocusedItem((prev) => prev - 1);
+    } else if (
+      e.key === "ArrowDown" &&
+      focusedItem < filteredData.slice(0, 10).length - 1
+    ) {
+      setFocusedItem((prev) => prev + 1);
+    } else if (e.key === "Enter") {
+      onSearch(filteredData[focusedItem].title.toLowerCase());
+      e.target.blur();
     }
   };
-
+  console.log(isSuggestionDropdownOpen);
   const onSearch = (searchText) => {
     setInputValue(searchText);
     setSelectedItem(searchText);
@@ -90,7 +99,6 @@ export const Searchbar = ({
           onKeyDown={handleKeyDown}
           ref={inputRef}
           onFocus={() => setIsSuggestionDropdownOpen(true)}
-          //   onBlur={() => setInputFocused(false)}
         />
         <div className="flex absolute h-full rounded-r-3xl min-w-[55px] top-0 right-0">
           <div className="h-3/5 w-[1px] self-center bg-[#9CA3AF]"></div>
@@ -108,9 +116,10 @@ export const Searchbar = ({
       ${isSuggestionDropdownOpen && inputValue ? "block" : "hidden"}
       `}
       >
-        {filteredData.slice(0, 10).map((item) => (
+        {filteredData.slice(0, 10).map((item, index) => (
           <div
             className={`flex group cursor-pointer hover:bg-gray-500 hover:bg-opacity-20 text-sm last-of-type:rounded-b-3xl 
+            ${focusedItem === index ? "bg-gray-500 bg-opacity-20" : ""}
             ${
               searchHistory.includes(item.title.toLowerCase())
                 ? "text-purple-400"
