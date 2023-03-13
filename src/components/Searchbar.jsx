@@ -21,6 +21,9 @@ export const Searchbar = ({
   };
 
   const handleKeyDown = (e) => {
+    // remove default behaviour of up and down arrow keys to jump to beginning and end of input
+    if (e.which === 38 || e.which === 40) e.preventDefault();
+
     if (e.key === "ArrowUp" && focusedItem > 0) {
       setFocusedItem((prev) => prev - 1);
     } else if (
